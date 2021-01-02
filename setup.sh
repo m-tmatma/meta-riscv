@@ -1,7 +1,12 @@
 #!/bin/bash
 # Bootstrapper for buildbot slave
 
-DIR="build"
+if [ x$1 == "" ] ; then
+  DIR="build"
+else
+  DIR=$1
+fi
+
 MACHINE="qemuriscv64"
 CONFFILE="conf/auto.conf"
 BITBAKEIMAGE="core-image-full-cmdline"
